@@ -1,0 +1,13 @@
+@import "neat";
+
+.Header {
+  background-color: #f5f5f5;
+  padding-top: 36px;
+  @include grid-column(2);
+  height: 100%;
+  position: fixed;
+  margin-left: 0px;
+  &-title, &-me, &-description {
+    @include grid-column(12);
+  }
+}

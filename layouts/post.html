@@ -1,0 +1,26 @@
+{{> header }}
+<div id="main" class="col-lg-7 col-md-7 col-sm-8 col-xs-12">
+   <article class="general-wrapper">
+      <div class="title">
+         <h3><span class="post_type fa fa-pencil-square-o"></span> <a href="/{{ path }}" title="{{ title }}">{{ title }}</a></h3>
+         <div class="byline">
+            <span><i class="fa fa-user"></i> <a href="http://designingmedia.com/wordpress/ibloggo-wp/?author=1" title="">filiz</a></span>
+            <span><i class="fa fa-folder-open-o"></i> <a href="#" title=""></a><a href="http://designingmedia.com/wordpress/ibloggo-wp/category/uncategorized/" rel="category tag">Uncategorized</a></span>
+            <span><i class="fa fa-calendar-o"></i> <a href="#" title="">{{moment date format="DD/MM/YYYY" }}</a></span>
+            <span><i class="fa fa-eye"></i> <a href="#" title=""> {{ readingTime }} </a></span>
+         </div>
+      </div>
+      <div class="desc">
+         {{{ contents }}}
+      </div>
+      <div class="post-footer">
+         <div class="pull-left">
+            <div class="single_blog_meta">
+               <div class="byline">
+               </div>
+            </div>
+         </div>
+      </div>
+   </article>
+</div>
+{{> footer }}

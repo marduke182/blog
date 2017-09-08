@@ -1,0 +1,8 @@
+nginx:
+  build: ./
+  volumes:
+    - ./build:/public
+  ports:
+    - "80:80"
+  expose:
+    - "80"
