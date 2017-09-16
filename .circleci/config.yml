@@ -1,0 +1,36 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/blog
+    docker:
+      - image: circleci/node:8
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-v8.4-{{ checksum "package.json" }}
+      - run:
+          name: Running npm install
+          command: npm install
+      - save_cache:
+          key: dependency-v8.4-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+      - run:
+          name: Making build
+          command: npm run build
+      - run:
+          name: Installing AWS CLI
+          command: sudo apt-get -y install awscli
+      - deploy:
+          name: Uploading staging build to Amazon S3
+          command: |
+            aws s3 sync build/ s3://jquintanb.com/
+workflows:
+    version: 2
+    build_and_deploy:
+      jobs:
+        - build:
+            filters:
+              branches:
+                only:
+                  - master

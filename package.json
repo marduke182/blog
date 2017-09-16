@@ -1,6 +1,9 @@
 {
   "name": "static-site-example",
   "private": true,
+  "scripts": {
+    "build": "NODE_ENV=production node ./index.js"
+  },
   "dependencies": {
     "bourbon-neat": "^2.1.0",
     "handlebars": "^4.0.5",
