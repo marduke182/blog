@@ -22,7 +22,7 @@ jobs:
           name: Installing AWS CLI
           command: |
             sudo apt-get install python3 python3-pip
-            sudo pip install awscli
+            sudo pip3 install awscli
       - deploy:
           name: Uploading staging build to Amazon S3
           command: |
