@@ -21,10 +21,10 @@ jobs:
       - run:
           name: Installing AWS CLI
           command: |
-            sudo apt-get -y install python
-            curl -O https://bootstrap.pypa.io/get-pip.py
-            python ./get-pip.py
-            pip install awscli --upgrade --user
+            sudo apt-get -y install python unzip
+            curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+            unzip awscli-bundle.zip -d awscli-bundle
+            sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
       - deploy:
           name: Uploading staging build to Amazon S3
           command: |
