@@ -9,9 +9,10 @@ var collections  = require('metalsmith-collections');
 var sass = require('metalsmith-sass');
 var helpers = require('metalsmith-register-helpers');
 var env = require('metalsmith-env');
-var wordcount = require("metalsmith-word-count");
+var wordcount = require("./src/readingTime");
 var author = require('metalsmith-author');
 var neat = require('bourbon-neat');
+var drafts = require('metalsmith-drafts');
 
 let siteBuild = Metalsmith(__dirname)
   .metadata({
@@ -21,7 +22,11 @@ let siteBuild = Metalsmith(__dirname)
     url: "http://jquintanab.com/"
   })
   .use(env())
-  .use(wordcount())
+  .use(wordcount({
+    metaKeyReadingTime: "readingTime",
+    metaKeyCount: "wordCount",
+  }))
+  .use(drafts())
   .source('./src')
   .destination('./build')
   .clean(false)
