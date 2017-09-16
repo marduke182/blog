@@ -21,7 +21,7 @@ jobs:
       - run:
           name: Installing AWS CLI
           command: |
-            lsb_release -a
+            cat /etc/*-release
       - deploy:
           name: Uploading staging build to Amazon S3
           command: |
