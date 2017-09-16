@@ -23,7 +23,7 @@ jobs:
           command: |
             sudo apt-get -y install python unzip
             curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
-            unzip awscli-bundle.zip -d awscli-bundle
+            unzip awscli-bundle.zip -d .
             sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
       - deploy:
           name: Uploading staging build to Amazon S3
