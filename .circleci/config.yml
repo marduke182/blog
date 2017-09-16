@@ -24,7 +24,7 @@ jobs:
       - deploy:
           name: Uploading staging build to Amazon S3
           command: |
-            aws s3 sync ./build s3://jquintanab.com
+            aws s3 sync --delete ./build s3://jquintanab.com --region eu-west-2
 workflows:
     version: 2
     build_and_deploy:
