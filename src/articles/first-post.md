@@ -1,5 +1,5 @@
 ---
-title: My First Post Test
+title: My First Post
 date: 2012-08-20
 layout: post.html
 author: jesus
