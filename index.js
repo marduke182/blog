@@ -13,6 +13,8 @@ var wordcount = require("./src/readingTime");
 var author = require('metalsmith-author');
 var neat = require('bourbon-neat');
 var drafts = require('metalsmith-drafts');
+var fingerprint = require('metalsmith-fingerprint')
+
 
 let siteBuild = Metalsmith(__dirname)
   .metadata({
@@ -64,6 +66,7 @@ let siteBuild = Metalsmith(__dirname)
   .use(helpers({
     "directory": "_helpers",
   }))
+  .use(fingerprint({ pattern: '**/*.css' }))
   .use(layouts({
     engine: 'handlebars',
     partials: 'layouts/partials'
