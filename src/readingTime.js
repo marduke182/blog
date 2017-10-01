@@ -35,7 +35,6 @@ function plugin(options) {
       if (isHTML(file) === false) { // only parse HTML-files
         return;
       }
-      console.log(files[file].contents.toString());
       stats = readingTime(files[file].contents.toString());
 
       files[file][opts.metaKeyCount] = stats.words;

@@ -1,13 +1,15 @@
 {{> header }}
-<article class="Article">
-  <div class="Article-date">
-    {{moment date format="MMMM DD, YYYY" }} by {{author.name}}
+<article class="Post">
+  <div class="Post-date">
+    <span class="Text-uppercase">{{moment date format="MMMM DD, YYYY" }}</span>
+    <span class="Text-italic">by</span>
+    <span class="Text-uppercase">{{author.name}}</span>
   </div>
-   <h1 class="Article-title">{{ title }}</h1>
-   <div class="Article-meta">
+   <h1 class="Post-title">{{ title }}</h1>
+   <div class="Post-meta">
     {{ readingTime }}
    </div>
-   <div class="Article-post">
+   <div class="Post-content">
       {{{ contents }}}
    </div>
 </article>

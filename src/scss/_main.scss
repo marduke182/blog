@@ -53,10 +53,10 @@ h3 a:hover,
 h4 a:hover,
 h5 a:hover,
 h6 a:hover{
-  color:#fff !important;
+  color: $grey !important;
 }
 a {
-  color: #aa0505;
+  color: $red;
   padding: 0;
   margin: 0;
   text-decoration: none;
@@ -69,7 +69,7 @@ a {
 a:hover,
 a:focus {
   text-decoration: none;
-  color:#686868;
+  color:$grey;
 }
 a.readmore {
   display:block;
@@ -86,8 +86,15 @@ a.readmore {
   padding-top: 36px;
   @include grid-column(12);
   @include grid-media($desktop-grid){
-    padding-top: 72px;
-    @include grid-shift(2);
-    @include grid-column(10);
+    @include grid-shift(4);
+    @include grid-column(8);
   }
+}
+
+.Text-italic {
+  font-style: italic;
+}
+
+.Text-uppercase {
+  text-transform: uppercase;
 }

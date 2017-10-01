@@ -1,41 +1,55 @@
 @import "neat";
 
-.Articles {
+.Posts {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.Article {
+.Post {
 
   &-meta, &-date {
     font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-family: 14px;
-    color: #777;
+    color: $grey;
   }
   &-content {
     font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 18px;
     @include grid-media($desktop-grid){
       font-size: 20px;
+      width: 60%;
     }
+
   }
   &-title {
     font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 50px;
     line-height: 55px;
     font-weight: 400;
-  }
-  @include grid-media($desktop-grid){
-    flex: 0 0 calc(50% - 20px);
-    margin-bottom: 50px;
-    padding-right: 20px;
-
-    &-meta {
-      color: #777;
-      font-size: 14px;
-      text-transform: uppercase;
+    @include grid-media($desktop-grid){
+      width: 80%;
     }
+  }
+  &Item {
+    padding: map-get($neat-grid, gutter) 0;
+    @include grid-media($desktop-grid){
+      flex: 0 0 calc(50% - #{map-get($neat-grid, gutter)});
+      padding-right: map-get($neat-grid, gutter);
+
+      &-meta {
+        color: $grey;
+        font-size: 14px;
+        text-transform: uppercase;
+      }
+    }
+  }
+  a {
+    color: $grey;
+  }
+
+  a:hover {
+    color: $red;
   }
 
 }

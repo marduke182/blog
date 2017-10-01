@@ -1,18 +1,18 @@
 {{> header }}
 <h2>What's new? </h2>
-<div class="Articles">
+<div class="Posts">
   {{#each articles}}
-    <div class="Article">
-      <div class="Article-meta">
+    <div class="PostItem">
+      <div class="PostItem-meta">
         {{moment date format="MMMM DD, YYYY" }} by {{this.author.name}}
       </div>
-      <div class="Article-title">
+      <div class="PostItem-title">
         <h3>{{this.title}}</h3>
       </div>
-      <div class="Article-excerpts">
+      <div class="PostItem-excerpts">
         {{{this.excerpt}}}
       </div>
-      <div class="Article-footer">
+      <div class="PostItem-footer">
         <a href="/{{ path }}">Read more</a>
       </div>
     </div>
