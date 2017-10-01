@@ -4,31 +4,33 @@
   <meta charset="UTF-8" />
   <title>{{ title }}</title>
   <meta name="description" content="{{ description }}">
-
+  <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
    <!-- Awesome Icons Styles -->
-  <link type="text/css" rel="stylesheet" href="{{ fingerprint.[css/font-awesome.css] }}" media="screen">
+  <link type="text/css" rel="stylesheet" href="/{{ fingerprint.[css/font-awesome.css] }}" media="screen">
   <!-- Normalize Styles -->
-  <link type="text/css" rel="stylesheet" href="{{ fingerprint.[css/normalize.css] }}" media="screen">
+  <link type="text/css" rel="stylesheet" href="/{{ fingerprint.[css/normalize.css] }}" media="screen">
   <!-- Css Styles -->
-  <link type="text/css" rel="stylesheet" href="{{ fingerprint.[scss/index.css] }}" media="screen">
+  <link type="text/css" rel="stylesheet" href="/{{ fingerprint.[scss/index.css] }}" media="screen">
 
 </head>
 <body>
   <div class="Blog">
     <div class="Header">
-      <h1 class="Header-title">
-        <a href="/">Jesús on the web</a>
-      </h1>
-      <div class="Header-me">
-        <img src="http://www.gravatar.com/avatar/8c32a4e68d06bc94eb67684d341b8943?s=256" alt="jesús">
-      </div>
-      <div class="Header-description">
-        <p>
-          <span>I'm Jesús Quintana, a software developer in Barcelona.</span>
-          <a href="/pages/about">More about me.</a>
-        </p>
+      <div class="Header-content">
+        <h1 class="Header-title">
+          <a href="/">Jesús on the web</a>
+        </h1>
+        <div class="Header-me">
+          <img src="http://www.gravatar.com/avatar/8c32a4e68d06bc94eb67684d341b8943?s=256" alt="jesús">
+        </div>
+        <div class="Header-description">
+          <p>
+            <span>I'm Jesús Quintana, a software developer in Barcelona.</span>
+            <a href="/pages/about">More about me.</a>
+          </p>
+        </div>
       </div>
     </div><!-- end header -->
     <section class="Content">

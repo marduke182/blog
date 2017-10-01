@@ -77,12 +77,17 @@ a.readmore {
 }
 
 .Blog {
-  @include grid-container;
-
+  @include grid-media($desktop-grid){
+    @include grid-container;
+  }
 }
 
 .Content {
-  padding-top: 72px;
-  @include grid-shift(2);
-  @include grid-column(10);
+  padding-top: 36px;
+  @include grid-column(12);
+  @include grid-media($desktop-grid){
+    padding-top: 72px;
+    @include grid-shift(2);
+    @include grid-column(10);
+  }
 }

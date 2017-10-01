@@ -1,14 +1,13 @@
 {{> header }}
-<article class="general-wrapper">
-   <div class="title">
-      <h3><span class="post_type fa fa-pencil-square-o"></span> <a href="/{{ path }}" title="{{ title }}">{{ title }}</a></h3>
-      <div class="byline">
-         <span><i class="fa fa-user"></i> <a href="#" title="">{{author.name}}</a></span>
-         <span><i class="fa fa-calendar-o"></i> <a href="#" title="">{{moment date format="DD/MM/YYYY" }}</a></span>
-         <span><i class="fa fa-eye"></i> <a href="#" title=""> {{ readingTime }} </a></span>
-      </div>
+<article class="Article">
+  <div class="Article-date">
+    {{moment date format="MMMM DD, YYYY" }} by {{author.name}}
+  </div>
+   <h1 class="Article-title">{{ title }}</h1>
+   <div class="Article-meta">
+    {{ readingTime }}
    </div>
-   <div class="desc">
+   <div class="Article-post">
       {{{ contents }}}
    </div>
 </article>
