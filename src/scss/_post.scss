@@ -33,6 +33,7 @@
   }
   &Item {
     padding: map-get($neat-grid, gutter) 0;
+    width: 100%;
     @include grid-media($desktop-grid){
       flex: 0 0 calc(50% - #{map-get($neat-grid, gutter)});
       padding-right: map-get($neat-grid, gutter);
