@@ -1,20 +1,20 @@
-var Metalsmith  = require('metalsmith');
-var markdown    = require('metalsmith-markdown');
-var watch    = require('metalsmith-watch');
-var layouts     = require('metalsmith-layouts');
-var permalinks  = require('metalsmith-permalinks');
-var excerpts = require('metalsmith-excerpts');
-var serve = require('metalsmith-serve');
-var collections  = require('metalsmith-collections');
-var sass = require('metalsmith-sass');
-var helpers = require('metalsmith-register-helpers');
-var env = require('metalsmith-env');
-var wordcount = require("./src/readingTime");
-var author = require('metalsmith-author');
-var neat = require('bourbon-neat');
-var drafts = require('metalsmith-drafts');
-var fingerprint = require('metalsmith-fingerprint')
-
+const Metalsmith = require('metalsmith');
+const markdown = require('metalsmith-markdown');
+const watch = require('metalsmith-watch');
+const layouts = require('metalsmith-layouts');
+const permalinks = require('metalsmith-permalinks');
+const excerpts = require('metalsmith-excerpts');
+const serve = require('metalsmith-serve');
+const collections = require('metalsmith-collections');
+const sass = require('metalsmith-sass');
+const helpers = require('metalsmith-register-helpers');
+const env = require('metalsmith-env');
+const wordcount = require("./src/readingTime");
+const author = require('metalsmith-author');
+const neat = require('bourbon-neat');
+const drafts = require('metalsmith-drafts');
+const fingerprint = require('metalsmith-fingerprint');
+const markdownRenderer = require('./markdown');
 
 let siteBuild = Metalsmith(__dirname)
   .metadata({
@@ -53,7 +53,9 @@ let siteBuild = Metalsmith(__dirname)
       }
     }
   }))
-  .use(markdown())
+  .use(markdown({
+    renderer: markdownRenderer,
+  }))
   .use(permalinks())
   .use(excerpts())
 

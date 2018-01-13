@@ -1,16 +1,64 @@
-{{> header }}
-<article class="Post">
-  <div class="Post-date">
-    <span class="Text-uppercase">{{moment date format="MMMM DD, YYYY" }}</span>
-    <span class="Text-italic">by</span>
-    <span class="Text-uppercase">{{author.name}}</span>
-  </div>
-   <h1 class="Post-title">{{ title }}</h1>
-   <div class="Post-meta">
-    {{ readingTime }}
-   </div>
-   <div class="Post-content">
-      {{{ contents }}}
-   </div>
-</article>
-{{> footer }}
+{{#> layout }}
+{{#*inline "subTitle"}}
+<a href="/" title="Go to Home Page"><h2>Back Home</h2></a>
+<a href="#comment" class="smoth-scroll"><i class="icon-bubbles"></i></a>
+{{/inline}}
+<div class="col-md-12 blog-post">
+    <!-- Post Headline Start -->
+    <div class="post-title">
+        <h1>{{ title }}</h1>
+    </div>
+    <!-- Post Headline End -->
+
+
+    <!-- Post Detail Start -->
+    <div class="post-info">
+        <span>{{moment date format="MMMM DD, YYYY" }} / by <a href="#" target="_blank">{{author.name}}</a> / {{ readingTime }} </span>
+    </div>
+    <!-- Post Detail End -->
+    {{{ contents }}}
+    <!-- Post Author Bio Box Start -->
+    <div class="about-author margin-top-70 margin-bottom-50">
+
+        <div class="picture">
+            <img src="images/blog/author.png" class="img-responsive" alt="">
+        </div>
+
+        <div class="c-padding">
+            <h3>Article By <a href="#" target="_blank" data-toggle="tooltip" data-placement="top"
+                              title="Visit Alex Website">Alex Parker</a></h3>
+            <p>You can use about author box when someone guest post on your blog, Lorem ipsum
+                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna ad minim veniam.</p>
+        </div>
+    </div>
+    <!-- Post Author Bio Box End -->
+
+
+    <!-- You May Also Like Start -->
+    <div class="you-may-also-like margin-top-50 margin-bottom-50">
+        <h3>You may also like</h3>
+        <div class="row">
+
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <a href="single.html"><p>Make mailchimp singup form working with ajax using jquery
+                    plugin</p></a>
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <a href="single.html"><p>How to design elegant e-mail newsletter in html for wish
+                    christmas to your subscribers?</p></a>
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <a href="single.html"><p>How to customize a wordpress theme entirely from scratch
+                    using a child theme?</p></a>
+            </div>
+
+        </div>
+    </div>
+    <!-- You May Also Like End -->
+
+</div>
+{{/layout}}
+

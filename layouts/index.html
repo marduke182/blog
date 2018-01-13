@@ -1,21 +1,28 @@
-{{> header }}
-<h2>What's new? </h2>
-<div class="Posts">
-  {{#each articles}}
-    <div class="PostItem">
-      <div class="PostItem-meta">
-        {{moment date format="MMMM DD, YYYY" }} by {{this.author.name}}
-      </div>
-      <div class="PostItem-title">
-        <h3>{{this.title}}</h3>
-      </div>
-      <div class="PostItem-excerpts">
-        {{{this.excerpt}}}
-      </div>
-      <div class="PostItem-footer">
-        <a href="/{{ path }}">Read more</a>
-      </div>
+{{#> layout }}
+{{#*inline "subTitle"}}
+<h2>My Blog</h2>
+<a href="contact.html"><i class="icon-envelope"></i></a>
+{{/inline}}
+{{#each articles}}
+<!-- Blog Post Start -->
+<div class="col-md-12 blog-post">
+    <div class="post-title">
+        <a href="/{{ path }}"><h1>{{this.title}}</h1></a>
     </div>
-  {{/each}}
+    <div class="post-info">
+        <span>{{moment date format="MMMM DD, YYYY" }} / by <a href="#" target="_blank">{{this.author.name}}</a></span>
+    </div>
+    <p>{{{this.excerpt}}}</p>
+    <a href="/{{ path }}" class="button button-style button-anim fa fa-long-arrow-right"><span>Read More</span></a>
 </div>
-{{> footer }}
+<!-- Blog Post End -->
+{{/each}}
+
+
+<div class="col-md-12 text-center">
+    <a href="javascript:void(0)" id="load-more-post" class="load-more-button">Load</a>
+    <div id="post-end-message"></div>
+</div>
+
+{{/layout}}
+
