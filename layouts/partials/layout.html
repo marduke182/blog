@@ -43,12 +43,21 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MDCZFW9');</script>
+    <!-- End Google Tag Manager -->
 
 </head>
 
 <body>
-
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDCZFW9"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- Preloader Start -->
 <div class="preloader">
@@ -74,9 +83,10 @@
                            data-toggle="collapse"><i class="icon-menu menu"></i></a>
                         <div id="menu" class="collapse">
                             <ul class="menu-link">
-                                <li><a href="/pages/about">About</a></li>
-                                <li><a href="/pages/about">Work</a></li>
-                                <li><a href="/pages/contact">Contact</a></li>
+                                <li><a href="/">Home</a></li>
+                                <!--<li><a href="/pages/about">About</a></li>-->
+                                <!--<li><a href="/pages/work">Work</a></li>-->
+                                <!--<li><a href="/pages/contact">Contact</a></li>-->
                             </ul>
                         </div>
                     </div>
@@ -161,6 +171,5 @@
 {{#nequals NODE_ENV 'production'}}
 <script src="http://localhost:35729/livereload.js"></script>
 {{/nequals}}
-
 </body>
 </html>
