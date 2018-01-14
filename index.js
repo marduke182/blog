@@ -41,6 +41,7 @@ let siteBuild = Metalsmith(__dirname)
     articles: {
       pattern: 'articles/**/*.md',
       sortBy: 'date',
+      reverse: true,
     },
   }))
   .use(author({ // make sure it comes after collections
